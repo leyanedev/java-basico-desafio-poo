@@ -1,1 +1,112 @@
+Para modelar as funcionalidades do iPhone usando UML (Unified Modeling Language), podemos usar diagramas de classes para representar as estruturas de classes e seus relacionamentos, e diagramas de sequência para mostrar a interação entre os objetos durante as operações. Vamos modelar as principais funcionalidades do iPhone: Músicas, Chamadas e Internet.
 
+### Diagrama de Classes:
+
+1. **Classe iPhone**:
+   - A classe principal que encapsula todas as funcionalidades do iPhone.
+
+   ```plantuml
+   @startuml
+   class iPhone {
+       - musicPlayer: MusicPlayer
+       - phone: Phone
+       - internetBrowser: InternetBrowser
+
+       + playMusic()
+       + makeCall(number: String)
+       + browseInternet(url: String)
+   }
+
+   class MusicPlayer {
+       + play()
+       + pause()
+       + stop()
+   }
+
+   class Phone {
+       + call(number: String)
+       + answer()
+       + hangUp()
+   }
+
+   class InternetBrowser {
+       + navigate(url: String)
+       + back()
+       + forward()
+   }
+
+   iPhone --> MusicPlayer
+   iPhone --> Phone
+   iPhone --> InternetBrowser
+   @enduml
+   ```
+
+   - **Explicação**:
+     - `iPhone`: Representa o iPhone como um todo, com composição das funcionalidades de `MusicPlayer`, `Phone` e `InternetBrowser`.
+     - `MusicPlayer`, `Phone` e `InternetBrowser`: Classes que representam as funcionalidades específicas do iPhone.
+     - `playMusic()`, `makeCall(number: String)`, `browseInternet(url: String)`: Métodos públicos da classe `iPhone` para interagir com as funcionalidades.
+
+### Diagrama de Sequência:
+
+2. **Diagrama de Sequência para Músicas, Chamadas e Internet**:
+   - Vamos mostrar como cada funcionalidade interage em um cenário típico.
+
+   **Cenário 1: Reproduzindo Música**
+
+   ```plantuml
+   @startuml
+   participant User
+   participant iPhone
+   participant MusicPlayer
+
+   User -> iPhone: playMusic()
+   iPhone -> MusicPlayer: play()
+   MusicPlayer --> iPhone: Ok
+   @enduml
+   ```
+
+   **Cenário 2: Fazendo uma Chamada Telefônica**
+
+   ```plantuml
+   @startuml
+   participant User
+   participant iPhone
+   participant Phone
+
+   User -> iPhone: makeCall("123456789")
+   iPhone -> Phone: call("123456789")
+   Phone --> iPhone: Ringing
+   @enduml
+   ```
+
+   **Cenário 3: Navegando na Internet**
+
+   ```plantuml
+   @startuml
+   participant User
+   participant iPhone
+   participant InternetBrowser
+
+   User -> iPhone: browseInternet("https://www.example.com")
+   iPhone -> InternetBrowser: navigate("https://www.example.com")
+   InternetBrowser --> iPhone: Page loaded
+   @enduml
+   ```
+
+### Explicação dos Diagramas de Sequência:
+
+- **Cenário 1 (Reproduzindo Música)**:
+  - O usuário solicita `playMusic()` ao iPhone.
+  - O iPhone delega a ação ao `MusicPlayer`, que executa `play()`.
+
+- **Cenário 2 (Fazendo uma Chamada Telefônica)**:
+  - O usuário solicita `makeCall("123456789")` ao iPhone.
+  - O iPhone delega a chamada ao `Phone`, que executa `call("123456789")`.
+
+- **Cenário 3 (Navegando na Internet)**:
+  - O usuário solicita `browseInternet("https://www.example.com")` ao iPhone.
+  - O iPhone delega a navegação ao `InternetBrowser`, que executa `navigate("https://www.example.com")`.
+
+### Conclusão:
+
+Estes diagramas oferecem uma representação clara das funcionalidades do iPhone utilizando UML. O diagrama de classes define a estrutura das classes envolvidas e seus relacionamentos, enquanto os diagramas de sequência ilustram como essas classes interagem em cenários específicos de uso. Isso ajuda na compreensão e no design de sistemas orientados a objetos de maneira mais clara e estruturada.

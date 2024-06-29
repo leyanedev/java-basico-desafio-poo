@@ -1,4 +1,5 @@
-Para modelar as funcionalidades do iPhone usando UML (Unified Modeling Language), podemos usar diagramas de classes para representar as estruturas de classes e seus relacionamentos, e diagramas de sequência para mostrar a interação entre os objetos durante as operações. Vamos modelar as principais funcionalidades do iPhone: Músicas, Chamadas e Internet.
+Para modelar as funcionalidades do iPhone usando UML (Unified Modeling Language), podemos usar diagramas de classes para representar as estruturas de classes e seus relacionamentos, 
+e diagramas de sequência para mostrar a interação entre os objetos durante as operações. Vamos modelar as principais funcionalidades do iPhone: Músicas, Chamadas e Internet.
 
 ### Diagrama de Classes:
 
@@ -109,4 +110,6 @@ Para modelar as funcionalidades do iPhone usando UML (Unified Modeling Language)
 
 ### Conclusão:
 
-Estes diagramas oferecem uma representação clara das funcionalidades do iPhone utilizando UML. O diagrama de classes define a estrutura das classes envolvidas e seus relacionamentos, enquanto os diagramas de sequência ilustram como essas classes interagem em cenários específicos de uso. Isso ajuda na compreensão e no design de sistemas orientados a objetos de maneira mais clara e estruturada.
+Estes diagramas oferecem uma representação clara das funcionalidades do iPhone utilizando UML. 
+O diagrama de classes define a estrutura das classes envolvidas e seus relacionamentos, enquanto os diagramas de sequência ilustram como essas classes interagem em cenários específicos de uso. 
+Isso ajuda na compreensão e no design de sistemas orientados a objetos de maneira mais clara e estruturada.
